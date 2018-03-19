@@ -1,0 +1,14 @@
+﻿@model List<Vidly.Models.Movie>
+@{
+    ViewBag.Title = "MoviesList";
+}
+
+<h2>Movies</h2>
+
+<ul class="list-group w-50">
+    @foreach (var movie in Model)
+    {
+        <li class="list-group-item mb-1">@movie.Name</li>
+    }
+</ul>
+

@@ -10,22 +10,15 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        List<Movie> lstMovies = new List<Movie>() {
+            new Movie(){ Id = 1, Name = "The Jungle Book" },
+            new Movie(){ Id = 2, Name = "Dad's Army" },
+            new Movie(){ Id = 3, Name = "The Green Mile" }
+        };
         // GET: Movies
-        public ActionResult Random()
+        public ActionResult MoviesList()
         {
-            Movie movie = new Movie() {Id = 10001, Name = "The Jungle Book" };
-            List<Customer> lstCustomer = new List<Customer>() {
-                new Customer(){ Id = 50001, Name = "Sheldon Cooper"},
-                new Customer(){ Id = 50002, Name = "Kaylee Cucoo"}
-            };
-
-            MovieCustomersViewModel movieCustomers = new MovieCustomersViewModel() {
-                Movie = movie,
-                Customers = lstCustomer
-            };
-
-
-            return View(movieCustomers);
+            return View(lstMovies);
         }        
         
     }
