@@ -16,7 +16,7 @@ namespace Vidly.Controllers
             new Movie(){ Id = 3, Name = "The Green Mile" }
         };
         // GET: Movies
-        public ActionResult MoviesList()
+        public ActionResult Index()
         {
             return View(lstMovies);
         }        

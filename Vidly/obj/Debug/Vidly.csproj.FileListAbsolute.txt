@@ -76,3 +76,6 @@ C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.Ad
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType1.resources
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDataAnnotationsToModels.resources
+C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNameForMembershipType.resources
+C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateNameInMembershipTypeRecords.resources
+C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.DeleteSoon.resources

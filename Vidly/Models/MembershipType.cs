@@ -10,6 +10,9 @@ namespace Vidly.Models
         //Membership Id
         public byte Id { get; set; }
 
+        //Name of Type of membership
+        public string Name { get; set; }
+
         //Fee for the Sign-Up
         public short SignUpFee { get; set; }
 
