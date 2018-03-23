@@ -73,9 +73,10 @@ C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.In
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.Cache
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedToCustomer.resources
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resources
-C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType1.resources
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDataAnnotationsToModels.resources
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNameForMembershipType.resources
 C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateNameInMembershipTypeRecords.resources
-C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.DeleteSoon.resources
+C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDateOfBirthToCustomer.resources
+C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMovieTablesToDatabase.resources
+C:\Users\p.rajendra.patil\source\repos\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateGenreTable.resources

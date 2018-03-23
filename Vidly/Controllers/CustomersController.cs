@@ -19,6 +19,7 @@ namespace Vidly.Controllers
 
         protected override void Dispose(bool disposing)
         {
+            base.Dispose(disposing);
             _context.Dispose();
         }
 
@@ -32,7 +33,7 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int? id)
         {
-            var Customers = _context.Customers;
+            var Customers = _context.Customers.Include(c => c.MembershipType);
             Customer customer = Customers.FirstOrDefault(c => c.Id == id);
 
             if (customer != null)
@@ -49,7 +50,7 @@ namespace Vidly.Controllers
             new Customer(){ Id = 2, Name = "Ross Gellar" },
             new Customer(){ Id = 3, Name = "Joey Tribbiani" }
             };
-
+            
             return lstCustomers;
         }
     }

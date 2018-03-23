@@ -25,6 +25,9 @@ namespace Vidly.Models
         //This will be referenced as a foreign key
         public byte MembershipTypeId { get; set; }
 
+        //Date of birth of the Customer.
+        public DateTime? DateOfBirth { get; set; }
+
 
     }
 }

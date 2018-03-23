@@ -209,10 +209,6 @@
     <Compile Include="Migrations\201803191048484_AddMembershipType.Designer.cs">
       <DependentUpon>201803191048484_AddMembershipType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803191052057_AddMembershipType1.cs" />
-    <Compile Include="Migrations\201803191052057_AddMembershipType1.Designer.cs">
-      <DependentUpon>201803191052057_AddMembershipType1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201803191134419_PopulateMembershipTypes.cs" />
     <Compile Include="Migrations\201803191134419_PopulateMembershipTypes.Designer.cs">
       <DependentUpon>201803191134419_PopulateMembershipTypes.cs</DependentUpon>
@@ -229,13 +225,22 @@
     <Compile Include="Migrations\201803201040556_UpdateNameInMembershipTypeRecords.Designer.cs">
       <DependentUpon>201803201040556_UpdateNameInMembershipTypeRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803201133165_DeleteSoon.cs" />
-    <Compile Include="Migrations\201803201133165_DeleteSoon.Designer.cs">
-      <DependentUpon>201803201133165_DeleteSoon.cs</DependentUpon>
+    <Compile Include="Migrations\201803231525163_AddDateOfBirthToCustomer.cs" />
+    <Compile Include="Migrations\201803231525163_AddDateOfBirthToCustomer.Designer.cs">
+      <DependentUpon>201803231525163_AddDateOfBirthToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803231656482_AddMovieTablesToDatabase.cs" />
+    <Compile Include="Migrations\201803231656482_AddMovieTablesToDatabase.Designer.cs">
+      <DependentUpon>201803231656482_AddMovieTablesToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803231657586_UpdateGenreTable.cs" />
+    <Compile Include="Migrations\201803231657586_UpdateGenreTable.Designer.cs">
+      <DependentUpon>201803231657586_UpdateGenreTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -312,6 +317,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -339,9 +345,6 @@
     <EmbeddedResource Include="Migrations\201803191048484_AddMembershipType.resx">
       <DependentUpon>201803191048484_AddMembershipType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803191052057_AddMembershipType1.resx">
-      <DependentUpon>201803191052057_AddMembershipType1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803191134419_PopulateMembershipTypes.resx">
       <DependentUpon>201803191134419_PopulateMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,8 +357,14 @@
     <EmbeddedResource Include="Migrations\201803201040556_UpdateNameInMembershipTypeRecords.resx">
       <DependentUpon>201803201040556_UpdateNameInMembershipTypeRecords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803201133165_DeleteSoon.resx">
-      <DependentUpon>201803201133165_DeleteSoon.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803231525163_AddDateOfBirthToCustomer.resx">
+      <DependentUpon>201803231525163_AddDateOfBirthToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803231656482_AddMovieTablesToDatabase.resx">
+      <DependentUpon>201803231656482_AddMovieTablesToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803231657586_UpdateGenreTable.resx">
+      <DependentUpon>201803231657586_UpdateGenreTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
