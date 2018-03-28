@@ -17,6 +17,7 @@ namespace Vidly.Models
         public string Name { get; set; }
 
         //Is Subscribed to the monthly News Letter
+        [Display(Name= "Is customer subscribed to the News Letter ?")]
         public bool IsSubscribedToNewsLetter { get; set; }
 
         //type of membership
@@ -26,6 +27,7 @@ namespace Vidly.Models
         public byte MembershipTypeId { get; set; }
 
         //Date of birth of the Customer.
+        [Display(Name = "Date of Birth")]
         public DateTime? DateOfBirth { get; set; }
 
 

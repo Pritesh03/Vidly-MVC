@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 using System.Data.Entity;
 
 namespace Vidly.Controllers
@@ -52,6 +53,18 @@ namespace Vidly.Controllers
             };
             
             return lstCustomers;
+        }
+
+        //Create a new Customer
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+
+            var newCustomerViewModel = new NewCustomerViewModel() {
+                MembershipType = membershipTypes                
+            };
+
+            return View(newCustomerViewModel);
         }
     }
 }
