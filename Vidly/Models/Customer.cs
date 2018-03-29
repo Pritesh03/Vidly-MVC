@@ -24,6 +24,7 @@ namespace Vidly.Models
         public MembershipType MembershipType { get; set; }
 
         //This will be referenced as a foreign key
+        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
         //Date of birth of the Customer.

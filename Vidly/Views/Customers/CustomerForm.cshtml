@@ -1,0 +1,41 @@
+﻿@model Vidly.ViewModels.CustomerFormViewModel
+
+@{
+    if (Model.Customer == null || Model.Customer.Id == 0)
+    {
+        ViewBag.Title = "Add New Customer";
+        <h2>New Customer</h2>
+    }
+    else
+    {
+        ViewBag.Title = "Edit Customer";
+        <h2>Edit Customer</h2>
+    }
+}
+
+@using (Html.BeginForm("Save", "Customers", FormMethod.Post))
+{
+    <div class="form-group mt-4">
+        @Html.LabelFor(c => c.Customer.Name)
+        @Html.TextBoxFor(c => c.Customer.Name, new { @class = "form-control form-control-lg w-50", placeholder = "Enter the customer's name..." })
+    </div>
+
+    <div class="form-group mt-5">
+        @Html.LabelFor(c => c.Customer.DateOfBirth)
+        @Html.TextBoxFor(c => c.Customer.DateOfBirth, "{0 : dd MMM yyyy }", new { @class = "form-control form-control-lg w-50", placeholder = "Enter the customer's date of birth..." })
+    </div>
+
+    <div class="form-group mt-5">
+        @Html.LabelFor(c => c.Customer.MembershipTypeId)
+        @Html.DropDownListFor(c => c.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control form-control-lg w-50" })
+    </div>
+
+    <div class="form-check mt-5">
+        @Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsLetter, new { @class = "form-check-input", style = "width:18px; height:18px;" })
+        @Html.LabelFor(c => c.Customer.IsSubscribedToNewsLetter, new { @class = "form-check-label", style = "margin-left : 10px;" })
+    </div>
+
+    @Html.HiddenFor(c => c.Customer.Id)
+
+    <button type="submit" class="btn btn-lg btn-primary mt-5 px-5">Save</button>
+}

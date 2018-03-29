@@ -51,7 +51,7 @@ namespace Vidly.Controllers
             new Customer(){ Id = 2, Name = "Ross Gellar" },
             new Customer(){ Id = 3, Name = "Joey Tribbiani" }
             };
-            
+
             return lstCustomers;
         }
 
@@ -60,11 +60,54 @@ namespace Vidly.Controllers
         {
             var membershipTypes = _context.MembershipTypes.ToList();
 
-            var newCustomerViewModel = new NewCustomerViewModel() {
-                MembershipType = membershipTypes                
+            var viewModel = new CustomerFormViewModel()
+            {
+                MembershipTypes = membershipTypes
             };
 
-            return View(newCustomerViewModel);
+            return View("CustomerForm", viewModel);
+        }
+
+        //Create a new Customer
+        [HttpPost]
+        public ActionResult Save(Customer customer)
+        {
+            //id == 0  means a new customer. we directly add it to the context.
+            if (customer.Id == 0)
+                _context.Customers.Add(customer);
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+
+                customerInDb.Name = customer.Name;
+                customerInDb.DateOfBirth = customer.DateOfBirth;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "customers");
+
+        }
+
+        //Edit an existing customer
+        public ActionResult Edit(int Id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
+
+            if (customer == null)
+                return HttpNotFound("Customer Not Found!");
+            else
+            {
+
+                var viewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
         }
     }
 }
