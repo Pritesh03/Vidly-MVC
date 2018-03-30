@@ -11,31 +11,47 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        ApplicationDbContext context;
+        ApplicationDbContext _context;
 
+        //Initialize a DbContext
         public MoviesController()
         {
-            context = new ApplicationDbContext();
+            _context = new ApplicationDbContext();
         }
 
+        //Dispose all the disposable objects in this overriden function
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            context.Dispose();
+            _context.Dispose();
         }
 
-        // GET: Movies
+        // GET: Get the list of all the movies
         public ActionResult Index()
         {
-            var movies = context.Movies.Include(m => m.Genre).ToList();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
             return View(movies);
         } 
         
+        //Sho details of each movie
         public ActionResult Details(int? Id)
         {
-            var movie = context.Movies.Include(m => m.Genre).FirstOrDefault(m => m.Id == Id);
+            var movie = _context.Movies.Include(m => m.Genre).FirstOrDefault(m => m.Id == Id);
             return View(movie);
         }
-        
+
+        //Create a new Movie and save it to database
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+
+            var viewModel = new NewMovieViewModel() {
+
+            };
+
+            return View();
+        }
+
+
     }
 }
