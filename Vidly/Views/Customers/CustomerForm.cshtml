@@ -12,24 +12,28 @@
         <h2>Edit Customer</h2>
     }
 }
-
 @using (Html.BeginForm("Save", "Customers", FormMethod.Post))
 {
+    @Html.ValidationSummary(true, "Please fix the following errors.", new { style = "color : red" })
+
     <div class="form-group mt-4">
         @Html.LabelFor(c => c.Customer.Name)
         @Html.TextBoxFor(c => c.Customer.Name, new { @class = "form-control form-control-lg w-50", placeholder = "Enter the customer's name..." })
-    </div>
-
-    <div class="form-group mt-5">
-        @Html.LabelFor(c => c.Customer.DateOfBirth)
-        @Html.TextBoxFor(c => c.Customer.DateOfBirth, "{0 : dd MMM yyyy }", new { @class = "form-control form-control-lg w-50", placeholder = "Enter the customer's date of birth..." })
+        @Html.ValidationMessageFor(c => c.Customer.Name)
     </div>
 
     <div class="form-group mt-5">
         @Html.LabelFor(c => c.Customer.MembershipTypeId)
         @Html.DropDownListFor(c => c.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control form-control-lg w-50" })
+        @Html.ValidationMessageFor(c => c.Customer.MembershipTypeId)
     </div>
 
+    <div class="form-group mt-5">
+        @Html.LabelFor(c => c.Customer.DateOfBirth)
+        @Html.TextBoxFor(c => c.Customer.DateOfBirth, "{0 : dd MMM yyyy }", new { @class = "form-control form-control-lg w-50", placeholder = "Enter the customer's date of birth..." })
+        @Html.ValidationMessageFor(c => c.Customer.DateOfBirth)
+    </div>
+    
     <div class="form-check mt-5">
         @Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsLetter, new { @class = "form-check-input", style = "width:18px; height:18px;" })
         @Html.LabelFor(c => c.Customer.IsSubscribedToNewsLetter, new { @class = "form-check-label", style = "margin-left : 10px;" })

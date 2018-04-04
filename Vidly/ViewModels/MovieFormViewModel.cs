@@ -6,7 +6,7 @@ using Vidly.Models;
 
 namespace Vidly.ViewModels
 {
-    public class NewMovieViewModel
+    public class MovieFormViewModel
     {
         //Movie
         public Movie Movie { get; set; }
