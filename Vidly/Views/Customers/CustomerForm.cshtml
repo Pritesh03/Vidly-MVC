@@ -33,13 +33,18 @@
         @Html.TextBoxFor(c => c.Customer.DateOfBirth, "{0 : dd MMM yyyy }", new { @class = "form-control form-control-lg w-50", placeholder = "Enter the customer's date of birth..." })
         @Html.ValidationMessageFor(c => c.Customer.DateOfBirth)
     </div>
-    
+
     <div class="form-check mt-5">
         @Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsLetter, new { @class = "form-check-input", style = "width:18px; height:18px;" })
         @Html.LabelFor(c => c.Customer.IsSubscribedToNewsLetter, new { @class = "form-check-label", style = "margin-left : 10px;" })
     </div>
 
     @Html.HiddenFor(c => c.Customer.Id)
-
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-lg btn-primary mt-5 px-5">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
 }

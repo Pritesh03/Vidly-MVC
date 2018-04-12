@@ -16,7 +16,7 @@ namespace Vidly.Models
         [StringLength(255)]        
         public string Name { get; set; }
 
-        //Is Subscribed to the monthly News Letter
+        //Is Subscribed to the monthly News Letter 
         [Display(Name= "Subscribed to News Letter ?")]
         public bool IsSubscribedToNewsLetter { get; set; }
 
